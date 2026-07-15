@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sequential Task Agent | Investment Analyst</title>
+  <style>
+    :root { --bg:#07111f; --panel:#0d1b2a; --text:#f4f7fb; --muted:#9fb0c3; --accent:#6ee7b7; --blue:#60a5fa; --border:rgba(255,255,255,.1); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,Arial,sans-serif; background:radial-gradient(circle at top right,#12335b 0,transparent 35%),var(--bg); color:var(--text); min-height:100vh; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:24px 7%; }
+    .brand { font-weight:800; letter-spacing:.4px; }
+    .badge { color:var(--accent); border:1px solid rgba(110,231,183,.35); padding:8px 12px; border-radius:999px; font-size:13px; }
+    main { width:min(1180px,86%); margin:70px auto; }
+    .hero { max-width:820px; }
+    h1 { font-size:clamp(42px,7vw,82px); line-height:.98; margin:0 0 24px; letter-spacing:-3px; }
+    h1 span { color:var(--accent); }
+    .lead { color:var(--muted); font-size:20px; line-height:1.7; max-width:720px; }
+    .cta { display:inline-block; margin-top:24px; padding:14px 20px; border-radius:12px; background:var(--accent); color:#062016; font-weight:800; border:0; cursor:pointer; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:70px; }
+    .card { background:rgba(13,27,42,.78); border:1px solid var(--border); border-radius:18px; padding:26px; backdrop-filter:blur(10px); transition:.25s; }
+    .card:hover { transform:translateY(-5px); border-color:rgba(110,231,183,.45); }
+    .card .num { color:var(--blue); font-size:13px; font-weight:800; }
+    .card h3 { margin:14px 0 10px; }
+    .card p { color:var(--muted); line-height:1.6; margin:0; }
+    footer { color:var(--muted); padding:40px 7%; font-size:13px; }
+    @media(max-width:760px){ .grid{grid-template-columns:1fr;} main{margin-top:35px;} h1{letter-spacing:-2px;} }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="brand">FIN<span style="color:#6ee7b7">AGENT</span></div>
+    <div class="badge">AI Investment Analyst</div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h1>Financial intelligence, <span>step by step.</span></h1>
+      <p class="lead">A sequential investment analysis agent that gathers data, validates financial signals, detects trends and risks, and turns fragmented market information into structured insights.</p>
+      <button class="cta" onclick="showMessage()">Explore the Agent</button>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="num">01 / ANALYZE</div>
+        <h3>Financial Intelligence</h3>
+        <p>Analyze financial data and generate actionable investment insights.</p>
+      </article>
+      <article class="card">
+        <div class="num">02 / COMPARE</div>
+        <h3>Trend & Risk Detection</h3>
+        <p>Compare financial performance and identify key trends and risks.</p>
+      </article>
+      <article class="card">
+        <div class="num">03 / RECOMMEND</div>
+        <h3>Market Evaluation</h3>
+        <p>Evaluate market information and provide a data-driven recommendation.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>Sequential Task Agent · Investment Analyst</footer>
+
+  <script>
+    function showMessage() {
+      alert("Use the Watson Orchestrate chat to start your investment analysis.");
+    }
+  </script>
+
+  <script>
+    window.wxOConfiguration = {
+      orchestrationID: "112a2eb21d0943ff884c837350d72495_cb48c0c3-c97f-4c80-8259-2f4c9da48c18",
+      hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
+      rootElementID: "root",
+      deploymentPlatform: "ibmcloud",
+      crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/112a2eb21d0943ff884c837350d72495:cb48c0c3-c97f-4c80-8259-2f4c9da48c18::",
+      chatOptions: {
+          agentId: "0361a3fe-85f9-4f78-8b1b-1a95c6211c24", 
+      }
+    };
+    setTimeout(function () {
+      const script = document.createElement('script');
+      script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+      script.addEventListener('load', function () {
+          wxoLoader.init();
+      });
+      document.head.appendChild(script);
+    }, 0);                     
+  </script>
+</body>
+</html>
